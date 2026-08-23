@@ -194,6 +194,13 @@ h4 {
   text-align: center;
 }
 
+/* =====================================================
+   MOTION SYSTEM — reveal ao rolar a página
+   Deixa o fluxo do site mais orgânico: os blocos entram
+   suavemente conforme entram na tela, em vez de aparecerem
+   todos de uma vez.
+===================================================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -214,12 +221,18 @@ h4 {
   transform: translateY(0);
 }
 
+/* atraso incremental para elementos filhos marcados
+   com data-reveal-group="hero" (h1 depois h4) */
 [data-reveal-group="hero"]:nth-of-type(1) {
   transition-delay: 0.05s;
 }
 [data-reveal-group="hero"]:nth-of-type(2) {
   transition-delay: 0.2s;
 }
+
+/* =====================================================
+   PERFIS / EXPERIÊNCIAS PERSONALIZADAS
+===================================================== */
 
 .profiles-section {
   width: 100%;
@@ -488,6 +501,9 @@ h4 {
   line-height: 1.4;
 }
 
+/* --- mockup do celular ---
+   Moldura feita em CSS; a tela em si é a imagem enviada pelo usuário. */
+
 .profile-phone {
   display: flex;
   justify-content: center;
@@ -502,6 +518,12 @@ h4 {
   padding: 12px;
 
   border-radius: 44px;
+
+  background: #111111;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .profile-card:hover .phone-frame {
@@ -510,6 +532,22 @@ h4 {
 
 .profile-card--reverse:hover .phone-frame {
   transform: rotate(1.5deg) translateY(-4px);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+
+  width: 90px;
+  height: 22px;
+
+  transform: translateX(-50%);
+
+  background: #111111;
+  border-radius: 0 0 16px 16px;
+
+  z-index: 2;
 }
 
 .phone-screen {
@@ -521,8 +559,153 @@ h4 {
 
   border-radius: 32px;
 
-  background: #f2f2f2;
+  background: #f2f2f2; /* aparece caso a imagem ainda não tenha sido substituída */
 }
+
+/* direção do reveal para os cards de benefícios:
+   entram deslizando levemente da lateral em que estão. */
+.reveal[data-reveal-dir="left"] {
+  transform: translate(-24px, 10px);
+}
+
+.reveal[data-reveal-dir="right"] {
+  transform: translate(24px, 10px);
+}
+
+.reveal[data-reveal-dir="left"].is-visible,
+.reveal[data-reveal-dir="right"].is-visible {
+  transform: translate(0, 0);
+}
+
+/* =====================================================
+   BENEFÍCIOS
+===================================================== */
+
+.features-section {
+  width: 100%;
+
+  padding: 40px 40px 20px;
+
+  background: #ffffff;
+}
+
+.features-container {
+  width: 90%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.features-col {
+  display: flex;
+  flex-direction: column;
+
+  gap: 56px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.features-col--left .feature-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.features-col--left .feature-item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.features-col--left .feature-item:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.features-col--right .feature-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.features-col--right .feature-item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.features-col--right .feature-item:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(126, 34, 206, 0.12);
+  color: #7e22ce;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
+}
+
+.feature-item:hover .feature-icon {
+  transform: translateY(-3px) scale(1.04);
+  background: rgba(126, 34, 206, 0.18);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-text h3 {
+  color: #111111;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  letter-spacing: -0.2px;
+}
+
+.feature-text p {
+  margin-top: 4px;
+
+  color: #777777;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.features-col--right .feature-item {
+  text-align: left;
+}
+
+.features-phone {
+  display: flex;
+  justify-content: center;
+}
+
+.features-phone .phone-frame {
+  width: 260px;
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
 
 .faq-section {
   width: 100%;
@@ -536,6 +719,10 @@ h4 {
   width: 90%;
   margin: 0 auto;
 }
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .faq-header {
   text-align: center;
@@ -568,12 +755,20 @@ h4 {
   line-height: 1.35;
 }
 
+/* =====================================================
+   LISTA
+===================================================== */
+
 .faq-list {
   width: 100%;
 
   display: flex;
   flex-direction: column;
 }
+
+/* =====================================================
+   ITEM
+===================================================== */
 
 .faq-item {
   width: 100%;
@@ -582,6 +777,10 @@ h4 {
 
   border-bottom: 1px solid transparent;
 }
+
+/* =====================================================
+   PERGUNTA
+===================================================== */
 
 .faq-question {
   width: 100%;
@@ -619,6 +818,10 @@ h4 {
 .faq-question h3 span {
   color: #7e22ce;
 }
+
+/* =====================================================
+   SETA
+===================================================== */
 
 .faq-arrow {
   position: relative;
@@ -660,6 +863,10 @@ h4 {
   height: 18px;
 }
 
+/* =====================================================
+   RESPOSTA
+===================================================== */
+
 .faq-answer {
   display: grid;
 
@@ -691,6 +898,10 @@ h4 {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* =====================================================
+   ITEM ABERTO
+===================================================== */
+
 .faq-item.active .faq-answer {
   grid-template-rows: 1fr;
 
@@ -706,6 +917,10 @@ h4 {
 .faq-item.active .faq-arrow {
   transform: rotate(225deg);
 }
+
+/* =====================================================
+   HOVER
+===================================================== */
 
 .faq-question:hover h3 {
   color: #222222;
@@ -1021,6 +1236,33 @@ h4 {
     width: 200px;
   }
 
+  .features-section {
+    padding: 20px 24px 10px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+  }
+
+  .features-phone {
+    order: -1;
+
+    margin-bottom: 12px;
+  }
+
+  .features-col {
+    width: 100%;
+    max-width: 420px;
+
+    gap: 28px;
+  }
+
+  .features-col--right .feature-item {
+    text-align: left;
+  }
+
   .faq-section {
     padding: 40px 24px 60px;
   }
@@ -1170,9 +1412,13 @@ h4 {
 
   .reveal,
   .reveal.is-visible,
+  .reveal[data-reveal-dir="left"],
+  .reveal[data-reveal-dir="right"],
   .profile-card,
   .profile-checklist li,
-  .phone-frame {
+  .phone-frame,
+  .feature-item,
+  .feature-icon {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

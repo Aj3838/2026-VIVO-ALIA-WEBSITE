@@ -16,16 +16,22 @@ faqItems.forEach((item) => {
   button.addEventListener("click", () => {
     const isActive = item.classList.contains("active");
 
+    // Fecha todos
     faqItems.forEach((faqItem) => {
       faqItem.classList.remove("active");
     });
 
+    // Se o clicado estava fechado, abre
     if (!isActive) {
       item.classList.add("active");
     }
   });
 });
 
+// =====================================================
+// SOMBRA DA NAVBAR AO ROLAR
+// Dá profundidade à navbar assim que a página sai do topo.
+// =====================================================
 window.addEventListener(
   "scroll",
   () => {
@@ -34,6 +40,12 @@ window.addEventListener(
   { passive: true },
 );
 
+// =====================================================
+// SCROLL REVEAL
+// Anima a entrada de seções, títulos e dos cards de perfil
+// conforme eles entram na viewport, deixando o fluxo da
+// página mais orgânico em vez de tudo aparecer estático.
+// =====================================================
 const revealTargets = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window && revealTargets.length) {
@@ -54,5 +66,6 @@ if ("IntersectionObserver" in window && revealTargets.length) {
 
   revealTargets.forEach((target) => revealObserver.observe(target));
 } else {
+  // Fallback: navegadores sem suporte simplesmente mostram tudo.
   revealTargets.forEach((target) => target.classList.add("is-visible"));
 }
