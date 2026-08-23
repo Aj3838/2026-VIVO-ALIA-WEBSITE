@@ -12,8 +12,13 @@
     sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .header-container {
@@ -49,10 +54,18 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
   transition:
     border-radius 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     padding 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s ease;
+}
+
+/* Sombra sutil que aparece conforme a página é rolada,
+   dá uma sensação de profundidade orgânica à navbar. */
+.navbar.scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .nav-top {
@@ -181,9 +194,335 @@ h4 {
   text-align: center;
 }
 
-/* =====================================================
-   FAQ
-===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-fade {
+  transform: translateY(14px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-group="hero"]:nth-of-type(1) {
+  transition-delay: 0.05s;
+}
+[data-reveal-group="hero"]:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+
+.profiles-section {
+  width: 100%;
+
+  padding: 96px 40px 40px;
+
+  background: #ffffff;
+}
+
+.profiles-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.profiles-header {
+  max-width: 620px;
+  margin: 0 auto 56px;
+
+  text-align: center;
+}
+
+.profiles-header h2 {
+  color: #050505;
+
+  font-size: 44px;
+  font-weight: 500;
+
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+}
+
+.profiles-header h2 span {
+  color: #7e22ce;
+}
+
+.profiles-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 64px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+
+  gap: 48px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+
+  background: #fafafa;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.07);
+  border-color: rgba(126, 34, 206, 0.2);
+}
+
+.profile-card--reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.profile-card--reverse .profile-content {
+  order: 2;
+}
+
+.profile-card--reverse .profile-phone {
+  order: 1;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+/* --- pessoa / avatar --- */
+
+.profile-person {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: #ececec;
+  color: #9a9a9a;
+}
+
+.profile-avatar svg {
+  width: 26px;
+  height: 26px;
+}
+
+.profile-person-info h3 {
+  color: #7e22ce;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: -0.3px;
+}
+
+.profile-person-info h3 span {
+  color: #7e22ce;
+  font-weight: 500;
+}
+
+.profile-person-info p {
+  margin-top: 2px;
+
+  color: #777777;
+
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* --- checklist --- */
+
+.profile-checklist {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  list-style: none;
+}
+
+.profile-checklist li {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #333333;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  opacity: 0;
+  transform: translateX(-10px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* stagger dos itens do checklist quando o card entra na tela,
+   mesmo espírito da animação dos links do menu mobile */
+.profile-card.is-visible .profile-checklist li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.profile-card.is-visible .profile-checklist li:nth-child(1) {
+  transition-delay: 0.15s;
+}
+.profile-card.is-visible .profile-checklist li:nth-child(2) {
+  transition-delay: 0.22s;
+}
+.profile-card.is-visible .profile-checklist li:nth-child(3) {
+  transition-delay: 0.29s;
+}
+.profile-card.is-visible .profile-checklist li:nth-child(4) {
+  transition-delay: 0.36s;
+}
+.profile-card.is-visible .profile-checklist li:nth-child(5) {
+  transition-delay: 0.43s;
+}
+
+.check-icon {
+  position: relative;
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 999px;
+
+  background: #7e22ce;
+}
+
+.check-icon::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 9px;
+  height: 5px;
+
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  transform: translate(-50%, -60%) rotate(-45deg);
+}
+
+/* --- callout --- */
+
+.profile-callout {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px 20px;
+
+  border-radius: 16px;
+
+  background: rgba(126, 34, 206, 0.08);
+}
+
+.callout-icon {
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: rgba(126, 34, 206, 0.14);
+  color: #7e22ce;
+}
+
+.callout-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.profile-callout p {
+  color: #7e22ce;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.profile-phone {
+  display: flex;
+  justify-content: center;
+}
+
+.phone-frame {
+  position: relative;
+
+  width: 240px;
+  aspect-ratio: 9 / 19.5;
+
+  padding: 12px;
+
+  border-radius: 44px;
+}
+
+.profile-card:hover .phone-frame {
+  transform: rotate(-1.5deg) translateY(-4px);
+}
+
+.profile-card--reverse:hover .phone-frame {
+  transform: rotate(1.5deg) translateY(-4px);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+
+  border-radius: 32px;
+
+  background: #f2f2f2;
+}
 
 .faq-section {
   width: 100%;
@@ -197,10 +536,6 @@ h4 {
   width: 90%;
   margin: 0 auto;
 }
-
-/* =====================================================
-   HEADER
-===================================================== */
 
 .faq-header {
   text-align: center;
@@ -233,20 +568,12 @@ h4 {
   line-height: 1.35;
 }
 
-/* =====================================================
-   LISTA
-===================================================== */
-
 .faq-list {
   width: 100%;
 
   display: flex;
   flex-direction: column;
 }
-
-/* =====================================================
-   ITEM
-===================================================== */
 
 .faq-item {
   width: 100%;
@@ -255,10 +582,6 @@ h4 {
 
   border-bottom: 1px solid transparent;
 }
-
-/* =====================================================
-   PERGUNTA
-===================================================== */
 
 .faq-question {
   width: 100%;
@@ -296,10 +619,6 @@ h4 {
 .faq-question h3 span {
   color: #7e22ce;
 }
-
-/* =====================================================
-   SETA
-===================================================== */
 
 .faq-arrow {
   position: relative;
@@ -341,10 +660,6 @@ h4 {
   height: 18px;
 }
 
-/* =====================================================
-   RESPOSTA
-===================================================== */
-
 .faq-answer {
   display: grid;
 
@@ -376,10 +691,6 @@ h4 {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* =====================================================
-   ITEM ABERTO
-===================================================== */
-
 .faq-item.active .faq-answer {
   grid-template-rows: 1fr;
 
@@ -395,10 +706,6 @@ h4 {
 .faq-item.active .faq-arrow {
   transform: rotate(225deg);
 }
-
-/* =====================================================
-   HOVER
-===================================================== */
 
 .faq-question:hover h3 {
   color: #222222;
@@ -674,6 +981,46 @@ h4 {
     line-height: 1.45;
   }
 
+  .profiles-section {
+    padding: 64px 24px 20px;
+  }
+
+  .profiles-header {
+    margin-bottom: 36px;
+  }
+
+  .profiles-header h2 {
+    font-size: 28px;
+  }
+
+  .profiles-list {
+    gap: 40px;
+  }
+
+  .profile-card,
+  .profile-card--reverse {
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .profile-card--reverse .profile-content,
+  .profile-card .profile-content {
+    order: 1;
+  }
+
+  .profile-card--reverse .profile-phone,
+  .profile-card .profile-phone {
+    order: 2;
+  }
+
+  .phone-frame {
+    width: 200px;
+  }
+
   .faq-section {
     padding: 40px 24px 60px;
   }
@@ -730,6 +1077,16 @@ h4 {
 
     font-size: 15px;
   }
+
+  .profiles-section {
+    padding: 48px 16px 16px;
+  }
+
+  .profile-card,
+  .profile-card--reverse {
+    padding: 20px;
+  }
+
   .faq-section {
     padding: 36px 20px 50px;
   }
@@ -792,6 +1149,10 @@ h4 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .navbar,
   .nav-content,
   .hamburger,
@@ -804,6 +1165,16 @@ h4 {
   .faq-arrow,
   .faq-answer,
   .faq-answer p {
+    transition: none !important;
+  }
+
+  .reveal,
+  .reveal.is-visible,
+  .profile-card,
+  .profile-checklist li,
+  .phone-frame {
+    opacity: 1 !important;
+    transform: none !important;
     transition: none !important;
   }
 }
