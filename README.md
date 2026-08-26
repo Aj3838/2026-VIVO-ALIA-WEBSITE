@@ -1,3 +1,12 @@
+
+<p align="center">
+  <img src="./assets/logo.png" alt="Logo do Modo Alia" width="200">
+</p>
+<br>
+<p align="center">
+  <img src="./assets/Image.jpg" alt="Logo do Modo Alia" width="700">
+</p>
+
 # Modo Alia
 
 ### Olimpíada de Dados Vivo
@@ -6,31 +15,6 @@ Uma proposta de interface simplificada para o aplicativo Vivo, desenvolvida para
 
 O **Modo Alia** reduz a complexidade da interface, priorizando clareza, acessibilidade e facilidade de uso.
 
----
-
-## Preview
-
-> **[ INSIRA AQUI UM PRINT DO SITE ]**
-
-<br>
-
-<p align="center">
-  <img src="COLOQUE-AQUI-O-LINK-DO-PRINT-DO-SITE" alt="Preview do Modo Alia" width="800">
-</p>
-
----
-
-## Logo
-
-> **[ INSIRA AQUI A LOGO DO MODO ALIA ]**
-
-<br>
-
-<p align="center">
-  <img src="COLOQUE-AQUI-O-LINK-DA-LOGO" alt="Logo do Modo Alia" width="300">
-</p>
-
----
 
 ## Sobre
 
@@ -45,7 +29,6 @@ O Modo Alia transforma a experiência do aplicativo Vivo por meio de:
 
 A proposta é permitir que funcionalidades essenciais sejam encontradas e utilizadas com menos esforço.
 
----
 
 ## Tecnologias
 
@@ -61,7 +44,6 @@ A proposta é permitir que funcionalidades essenciais sejam encontradas e utiliz
   HTML5 &nbsp;·&nbsp; CSS3 &nbsp;·&nbsp; JavaScript
 </p>
 
----
 
 ## Transmídia
 
@@ -83,11 +65,9 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
   </a>
 </p>
 
----
 
 ## Video Pitch
 
-> **[ INSIRA AQUI O VIDEO PITCH DO PROJETO ]**
 
 <p align="center">
   <a href="COLOQUE-AQUI-O-LINK-DO-VIDEO">
@@ -101,7 +81,6 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
   </a>
 </p>
 
----
 
 ## Objetivo
 
@@ -109,7 +88,6 @@ Criar uma experiência digital mais simples, acessível e inclusiva, demonstrand
 
 > Tecnologia deve ser simples para todos.
 
----
 
 ## Equipe
 
@@ -121,8 +99,6 @@ Criar uma experiência digital mais simples, acessível e inclusiva, demonstrand
 **Etec de Taboão da Serra**
 
 Orientadora: **Alicia Stefanny**
-
----
 
 ## Entrega
 
