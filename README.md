@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="./assets/logo.png" alt="Logo do Modo Alia" width="200">
 </p>
@@ -15,6 +14,11 @@ Uma proposta de interface simplificada para o aplicativo Vivo, desenvolvida para
 
 O **Modo Alia** reduz a complexidade da interface, priorizando clareza, acessibilidade e facilidade de uso.
 
+<p align="center">
+  <a href="https://aj3838.github.io/2026-Website-Vivo-Alia/">
+     <strong>Acessar o Website do Modo Alia</strong>
+  </a>
+</p>
 
 ## Sobre
 
@@ -29,7 +33,6 @@ O Modo Alia transforma a experiência do aplicativo Vivo por meio de:
 
 A proposta é permitir que funcionalidades essenciais sejam encontradas e utilizadas com menos esforço.
 
-
 ## Tecnologias
 
 <p align="center">
@@ -43,7 +46,6 @@ A proposta é permitir que funcionalidades essenciais sejam encontradas e utiliz
 <p align="center">
   HTML5 &nbsp;·&nbsp; CSS3 &nbsp;·&nbsp; JavaScript
 </p>
-
 
 ## Transmídia
 
@@ -65,9 +67,7 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
   </a>
 </p>
 
-
 ## Video Pitch
-
 
 <p align="center">
   <a href="COLOQUE-AQUI-O-LINK-DO-VIDEO">
@@ -81,19 +81,17 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
   </a>
 </p>
 
-
 ## Objetivo
 
 Criar uma experiência digital mais simples, acessível e inclusiva, demonstrando como uma interface alternativa pode facilitar o acesso às principais funcionalidades do aplicativo Vivo.
 
 > Tecnologia deve ser simples para todos.
 
-
 ## Equipe
 
-**Agno Souza**,
-**Bruno Guerra**,
-**Marina Yumi** e
+**Agno Souza**,  
+**Bruno Guerra**,  
+**Marina Yumi** e  
 **Giovanna Cintra**
 
 **Etec de Taboão da Serra**
