@@ -15,7 +15,7 @@ Uma proposta de interface simplificada para o aplicativo Vivo, desenvolvida para
 O **Modo Alia** reduz a complexidade da interface, priorizando clareza, acessibilidade e facilidade de uso.
 
 <p align="center">
-  <a href="https://aj3838.github.io/2026-Website-Vivo-Alia/">
+  <a href="https://aj3838.github.io/2026-VIVO-ALIA-WEBSITE/">
      <strong>Acessar o Website do Modo Alia</strong>
   </a>
 </p>
