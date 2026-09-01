@@ -62,7 +62,7 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
 </p>
 
 <p align="center">
-  <a href="COLOQUE-AQUI-O-LINK-DO-INSTAGRAM">
+  <a href="https://www.instagram.com/vivoaliaprojeto/">
     Instagram do Modo Alia
   </a>
 </p>
