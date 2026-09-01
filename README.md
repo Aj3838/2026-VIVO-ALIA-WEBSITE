@@ -56,7 +56,7 @@ O projeto também possui conteúdos que apresentam o **Modo Alia** em diferentes
 Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
 
 <p align="center">
-  <a href="COLOQUE-AQUI-O-LINK-DO-INSTAGRAM">
+  <a href="https://www.instagram.com/vivoaliaprojeto/">
     <img src="https://cdn.simpleicons.org/instagram/000000" width="45" alt="Instagram">
   </a>
 </p>
@@ -70,13 +70,13 @@ Acompanhe nossas transmissões, conteúdos e posts sobre o projeto.
 ## Video Pitch
 
 <p align="center">
-  <a href="COLOQUE-AQUI-O-LINK-DO-VIDEO">
+  <a href="https://youtu.be/iPZr4RGnKoM?is=reO5RYjfJpAtp7ZK">
     <img src="https://img.icons8.com/ios-filled/100/000000/youtube-play.png" width="55" alt="Assistir ao Video Pitch">
   </a>
 </p>
 
 <p align="center">
-  <a href="COLOQUE-AQUI-O-LINK-DO-VIDEO">
+  <a href="https://www.instagram.com/vivoaliaprojeto/">
     Assistir ao Video Pitch
   </a>
 </p>
